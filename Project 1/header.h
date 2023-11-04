@@ -10,6 +10,7 @@
                     } while (0)
 
 #define buffSize 2   // Maximum size for exchanged string
+#define maxBuff 10   // Number of times the buffer will accept values
 
 // Define a structure that will be imposed on the shared memory object
 
