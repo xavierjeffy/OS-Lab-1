@@ -12,6 +12,7 @@ buffer before it consumes. This effectively achieves mutual exclusivity, and it 
 
 # The files are compiled using:
 gcc producer.c -pthread -lrt -o producer
+
 gcc consumer.c -pthread -lrt -o consumer
 
 # The files are run using:
