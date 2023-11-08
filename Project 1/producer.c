@@ -7,12 +7,12 @@ main(){
     int fd;
     struct sharedMem *shmp;
 
-    fd = shmget(SHM_KEY, sizeof(struct sharedMem), 0644 | IPC_CREAT);   //creating shared memory object
+    fd = shmget(SHM_KEY, sizeof(struct sharedMem), 0644 | IPC_CREAT);   //Creating shared memory object
     if(fd == -1){                                                          
         errExit("Shared Memory");                                               
     }                                                                                                                                             
     
-    shmp = shmat(fd, NULL, 0);   //attatching shared memory to the segment
+    shmp = shmat(fd, NULL, 0);   //Attatching shared memory to the segment
     if(shmp == (void*)-1){
         errExit("mmap");
     }
@@ -27,10 +27,10 @@ main(){
     size_t i = 0;
     for(size_t j = 0; j < maxBuff ; j++){ 
         sem_wait(&shmp->sem2);     //Waiting for the consumer to consume a character                                    
-        shmp->buf[i] = item;       //Placing charaters into the buffer
+        shmp->buf[i] = item;       //Placing characters into the buffer
         i = (i + 1) % buffSize;
         ++item;
-        sem_post(&shmp->sem1);    //Signalling that an item has been produced
+        sem_post(&shmp->sem1);    //Signaling that an item has been produced
     }
   
     
