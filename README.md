@@ -20,12 +20,21 @@ gcc consumer.c -pthread -lrt -o consumer
 
 # Example output
 Got char a
+
 Got char b
+
 Got char c
+
 Got char d
+
 Got char e
+
 Got char f
+
 Got char g
+
 Got char h
+
 Got char i
+
 Got char j
