@@ -11,7 +11,7 @@
 #define errExit(msg) do { perror(msg); exit(EXIT_FAILURE); \
                     } while (0)
 
-#define buffSize 2     // Maximum size for exchanged string
+#define buffSize 2     // Maximum size for the buffer
 #define maxBuff 10     // Number of times the buffer will accept values
 #define SHM_KEY 0x1111
 
